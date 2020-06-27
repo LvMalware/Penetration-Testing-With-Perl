@@ -45,7 +45,7 @@ while (1)
     my $ip = NetPacket::IP->decode($received_bytes);
 
     printf "Protocol %s %s -> %s\n",
-      ($protocol_map{ $ip->{proto} or 'Unknown' }),
+      ($protocol_map{ $ip->{proto} } or 'Unknown' ),
       $ip->{src_ip},
       $ip->{dest_ip};
   }
